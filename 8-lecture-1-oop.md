@@ -93,7 +93,7 @@ class Car {
 }
 
 let myCar = new Car("Toyota");
-let yourCar = new Car("Honda");
+let yourCar = new Car("Honda"); //you can pass multiple arguments and they will be taken in order :)
 ```
 
 ---
@@ -105,7 +105,7 @@ class Country {
     }
 }
 let canada = new Country(30000);
-let usa = new Country(400000);
+let usa = new Country(400000); 
 ```
 
 ---
@@ -160,7 +160,7 @@ let concordiaBootcamps = new School('Concordia Bootcamps');
 concordiaBootcamps.noise();
 
 // What do I have to type to output the name?
-
+concordiaBootCamps.name // 'Concordia Bootcamps'
 ```
 
 ---
@@ -168,18 +168,18 @@ concordiaBootcamps.noise();
 ```js
 class Dog {
     constructor(voice) {
-        this.voice = voice;
+        this.voice = voice || 'bark';
     }
     noise = () => {
-        console.log('woof');
+        console.log(this.voice);
     }
     coolOff = () => {
         console.log('pant');
     }
 }
 
-let mastiff = new Dog();
-let terrier = new Dog();
+let mastiff = new Dog('BARK');
+let terrier = new Dog('arf');
 ```
 
 ---
@@ -213,12 +213,22 @@ let terrier = new Dog('yip!yip!');
 ```js
 class Car {
     constructor() {
-        this.mileage = 0;
+        this.mileage = mileage || 0;
     }
     drive = () => { this.mileage = this.mileage + 10 }
 }
 let myCar = new Car();
 myCar.drive(); 
+
+class Car {
+    constructor(mileage) {
+        this.mileage = 0;
+        this.new = mileage > 0 ? 'used' : 'new';
+    }
+    drive = (amount) => { this.mileage = this.mileage + amount || 10 }
+}
+let myCar = new Car(10000);
+myCar.drive(100); 
 ```
 
 ---
@@ -230,8 +240,14 @@ myCar.drive();
 // 2. How could we represent varying hunger levels based on activity?
 // 3. How about when it eats?
 class Animal {
-
+    constructor(name, hunger)
+        this.name = name;
+        this.hunger = 0;
+            play = () => {this.hunger += 20};
+            hunt = () => {this.hunger += 30};
+            eat = () => {this.hunger -= 50};
 }
+let rabbit = new Animal (puppy);
 
 ```
 
