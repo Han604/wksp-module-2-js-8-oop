@@ -8,10 +8,19 @@
 //      - reference to book currently reading (null for now)
 //      - reference to book that is upNext (null for now)
 //
-// Then intantiate it once as 'homeLibrary'
+// Then instantiate it once as 'homeLibrary'
 
 // Console.log(homeLibrary) to verify that all is working.
 
 class BookList {
-
+    constructor(){
+        this.booksRead = 0;
+        this.booksUnread = 0;
+        this.books = [];
+        this.lastBook = null;
+        this.currentBook = null;
+        this.upNext = null;
+    }
 }
+let homeLibrary = new BookList ();
+console.log (homeLibrary);
